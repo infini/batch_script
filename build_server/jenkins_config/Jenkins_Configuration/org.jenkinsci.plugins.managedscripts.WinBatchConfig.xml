@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<org.jenkinsci.plugins.managedscripts.WinBatchConfig_-WinBatchConfigProvider plugin="managed-scripts@1.1">
+  <configs>
+    <entry>
+      <string>org.jenkinsci.plugins.managedscripts.WinBatchConfig1372325716068</string>
+      <org.jenkinsci.plugins.managedscripts.WinBatchConfig>
+        <id>org.jenkinsci.plugins.managedscripts.WinBatchConfig1372325716068</id>
+        <name>_copy</name>
+        <comment></comment>
+        <content>copy /Y %1\%2 %3\%4</content>
+        <args>
+          <org.jenkinsci.plugins.managedscripts.WinBatchConfig_-Arg>
+            <name>src path</name>
+          </org.jenkinsci.plugins.managedscripts.WinBatchConfig_-Arg>
+          <org.jenkinsci.plugins.managedscripts.WinBatchConfig_-Arg>
+            <name>src file name</name>
+          </org.jenkinsci.plugins.managedscripts.WinBatchConfig_-Arg>
+          <org.jenkinsci.plugins.managedscripts.WinBatchConfig_-Arg>
+            <name>dest path</name>
+          </org.jenkinsci.plugins.managedscripts.WinBatchConfig_-Arg>
+          <org.jenkinsci.plugins.managedscripts.WinBatchConfig_-Arg>
+            <name>dest file name</name>
+          </org.jenkinsci.plugins.managedscripts.WinBatchConfig_-Arg>
+        </args>
+      </org.jenkinsci.plugins.managedscripts.WinBatchConfig>
+    </entry>
+  </configs>
+</org.jenkinsci.plugins.managedscripts.WinBatchConfig_-WinBatchConfigProvider>

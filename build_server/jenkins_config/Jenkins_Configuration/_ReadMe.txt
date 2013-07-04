@@ -1,0 +1,1 @@
+해당 폴더를 복사하여 D:\Build\Work\_Backup_Jenkins 에 넣어 주시면 됩니다.

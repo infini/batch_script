@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<hudson.plugins.mercurial.MercurialInstallation_-DescriptorImpl plugin="mercurial@1.46">
+  <installations>
+    <hudson.plugins.mercurial.MercurialInstallation>
+      <name>TortoiseHg</name>
+      <home>C:\Program Files\TortoiseHg</home>
+      <properties/>
+      <executable>INSTALLATION\hg.exe</executable>
+      <debug>false</debug>
+      <useCaches>false</useCaches>
+      <useSharing>false</useSharing>
+    </hudson.plugins.mercurial.MercurialInstallation>
+  </installations>
+</hudson.plugins.mercurial.MercurialInstallation_-DescriptorImpl>

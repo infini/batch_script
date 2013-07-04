@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<project>
+  <actions/>
+  <description></description>
+  <keepDependencies>false</keepDependencies>
+  <properties/>
+  <scm class="hudson.scm.NullSCM"/>
+  <canRoam>true</canRoam>
+  <disabled>false</disabled>
+  <blockBuildWhenDownstreamBuilding>false</blockBuildWhenDownstreamBuilding>
+  <blockBuildWhenUpstreamBuilding>false</blockBuildWhenUpstreamBuilding>
+  <triggers class="vector"/>
+  <concurrentBuild>false</concurrentBuild>
+  <builders>
+    <org.jenkinsci.plugins.managedscripts.WinBatchBuildStep plugin="managed-scripts@1.1">
+      <command>org.jenkinsci.plugins.managedscripts.WinBatchConfig1372325716068</command>
+      <buildStepArgs>
+        <string>D:\test_for_plugin\src</string>
+        <string>111.txt</string>
+        <string>D:\test_for_plugin\dest</string>
+        <string></string>
+      </buildStepArgs>
+    </org.jenkinsci.plugins.managedscripts.WinBatchBuildStep>
+  </builders>
+  <publishers/>
+  <buildWrappers/>
+</project>

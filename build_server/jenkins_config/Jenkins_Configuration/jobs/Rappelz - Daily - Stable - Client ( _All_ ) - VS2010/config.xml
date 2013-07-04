@@ -1,0 +1,112 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<project>
+  <actions/>
+  <description></description>
+  <keepDependencies>false</keepDependencies>
+  <properties/>
+  <scm class="hudson.plugins.mercurial.MercurialSCM" plugin="mercurial@1.46">
+    <installation>TortoiseHg</installation>
+    <source>http://program:mercurial!23@10.255.10.13/RP/Project_RP/</source>
+    <modules></modules>
+    <branch>stable</branch>
+    <subdir>D:\Build\RP_Source_Jenkins\stable</subdir>
+    <clean>true</clean>
+    <browser class="hudson.plugins.mercurial.browser.HgWeb">
+      <url>http://program:mercurial!23@10.255.10.13/RP/Project_RP/</url>
+    </browser>
+  </scm>
+  <canRoam>true</canRoam>
+  <disabled>false</disabled>
+  <blockBuildWhenDownstreamBuilding>true</blockBuildWhenDownstreamBuilding>
+  <blockBuildWhenUpstreamBuilding>true</blockBuildWhenUpstreamBuilding>
+  <triggers class="vector">
+    <hudson.triggers.TimerTrigger>
+      <spec>0 4 * * 2-6</spec>
+    </hudson.triggers.TimerTrigger>
+  </triggers>
+  <concurrentBuild>false</concurrentBuild>
+  <customWorkspace>D:\Build\RP_Source_Jenkins\stable\</customWorkspace>
+  <builders>
+    <hudson.tasks.BatchFile>
+      <command>D:\Build\Work\_Batch_Script_Jenkins\_Common\Common_00_Update_SVN_Daily.bat</command>
+    </hudson.tasks.BatchFile>
+    <hudson.plugins.msbuild.MsBuildBuilder plugin="msbuild@1.17">
+      <msBuildName>.NET 4.0</msBuildName>
+      <msBuildFile>.\Client\Game\SFrame10.sln</msBuildFile>
+      <cmdLineArgs>/t:Rebuild /p:Configuration=Debug;Platform=Win32</cmdLineArgs>
+      <buildVariablesAsProperties>true</buildVariablesAsProperties>
+      <continueOnBuildFailure>false</continueOnBuildFailure>
+    </hudson.plugins.msbuild.MsBuildBuilder>
+    <hudson.plugins.msbuild.MsBuildBuilder plugin="msbuild@1.17">
+      <msBuildName>.NET 4.0</msBuildName>
+      <msBuildFile>.\Client\Game\SFrame10.sln</msBuildFile>
+      <cmdLineArgs>/t:Rebuild /p:Configuration=Debug_Release;Platform=Win32</cmdLineArgs>
+      <buildVariablesAsProperties>true</buildVariablesAsProperties>
+      <continueOnBuildFailure>false</continueOnBuildFailure>
+    </hudson.plugins.msbuild.MsBuildBuilder>
+    <hudson.plugins.msbuild.MsBuildBuilder plugin="msbuild@1.17">
+      <msBuildName>.NET 4.0</msBuildName>
+      <msBuildFile>.\Client\Game\SFrame10.sln</msBuildFile>
+      <cmdLineArgs>/t:Rebuild /p:Configuration=Release;Platform=Win32</cmdLineArgs>
+      <buildVariablesAsProperties>true</buildVariablesAsProperties>
+      <continueOnBuildFailure>false</continueOnBuildFailure>
+    </hudson.plugins.msbuild.MsBuildBuilder>
+    <hudson.plugins.msbuild.MsBuildBuilder plugin="msbuild@1.17">
+      <msBuildName>.NET 4.0</msBuildName>
+      <msBuildFile>.\Client\Game\SFrame10.sln</msBuildFile>
+      <cmdLineArgs>/t:Rebuild /p:Configuration=Release_Dev;Platform=Win32</cmdLineArgs>
+      <buildVariablesAsProperties>true</buildVariablesAsProperties>
+      <continueOnBuildFailure>false</continueOnBuildFailure>
+    </hudson.plugins.msbuild.MsBuildBuilder>
+    <hudson.plugins.msbuild.MsBuildBuilder plugin="msbuild@1.17">
+      <msBuildName>.NET 4.0</msBuildName>
+      <msBuildFile>.\Client\Game\SFrame10.sln</msBuildFile>
+      <cmdLineArgs>/t:Rebuild /p:Configuration=Release_ME;Platform=Win32</cmdLineArgs>
+      <buildVariablesAsProperties>true</buildVariablesAsProperties>
+      <continueOnBuildFailure>false</continueOnBuildFailure>
+    </hudson.plugins.msbuild.MsBuildBuilder>
+    <hudson.tasks.BatchFile>
+      <command>D:\Build\Work\_Batch_Script_Jenkins\_Client\Client_One_Step_Version_Release_Daily.bat stable VS2010</command>
+    </hudson.tasks.BatchFile>
+    <hudson.tasks.BatchFile>
+      <command>D:\Build\Work\_Batch_Script_Jenkins\_Base\_SVN_Commit_Force.bat D:\Build\RP_SVN\Program_Team\DailyBuild D:\Build\Work\Commit_Note\DailyNote_stable.txt</command>
+    </hudson.tasks.BatchFile>
+  </builders>
+  <publishers>
+    <hudson.plugins.logparser.LogParserPublisher plugin="log-parser@1.0.8">
+      <unstableOnWarning>false</unstableOnWarning>
+      <failBuildOnError>false</failBuildOnError>
+      <parsingRulesPath>C:\Program Files (x86)\Jenkins\VSParsingRules\VSParsingRules.txt</parsingRulesPath>
+    </hudson.plugins.logparser.LogParserPublisher>
+    <hudson.plugins.emailext.ExtendedEmailPublisher plugin="email-ext@2.30.2">
+      <recipientList>$DEFAULT_RECIPIENTS</recipientList>
+      <configuredTriggers>
+        <hudson.plugins.emailext.plugins.trigger.FailureTrigger>
+          <email>
+            <recipientList></recipientList>
+            <subject>$PROJECT_DEFAULT_SUBJECT</subject>
+            <body>$PROJECT_DEFAULT_CONTENT</body>
+            <sendToDevelopers>false</sendToDevelopers>
+            <sendToRequester>false</sendToRequester>
+            <includeCulprits>false</includeCulprits>
+            <sendToRecipientList>true</sendToRecipientList>
+            <attachmentsPattern></attachmentsPattern>
+            <attachBuildLog>false</attachBuildLog>
+            <compressBuildLog>false</compressBuildLog>
+            <replyTo></replyTo>
+          </email>
+        </hudson.plugins.emailext.plugins.trigger.FailureTrigger>
+      </configuredTriggers>
+      <contentType>default</contentType>
+      <defaultSubject>$DEFAULT_SUBJECT</defaultSubject>
+      <defaultContent>$DEFAULT_CONTENT</defaultContent>
+      <attachmentsPattern></attachmentsPattern>
+      <presendScript>$DEFAULT_PRESEND_SCRIPT</presendScript>
+      <attachBuildLog>false</attachBuildLog>
+      <compressBuildLog>false</compressBuildLog>
+      <replyTo>$DEFAULT_REPLYTO</replyTo>
+      <saveOutput>false</saveOutput>
+    </hudson.plugins.emailext.ExtendedEmailPublisher>
+  </publishers>
+  <buildWrappers/>
+</project>

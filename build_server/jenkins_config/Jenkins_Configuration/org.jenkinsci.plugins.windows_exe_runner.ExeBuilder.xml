@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<org.jenkinsci.plugins.windows__exe__runner.ExeBuilder_-DescriptorImpl plugin="windows-exe-runner@1.1">
+  <installations>
+    <org.jenkinsci.plugins.windows__exe__runner.ExeInstallation>
+      <name>IncrediBuild</name>
+      <home>C:\Program Files (x86)\Xoreax\IncrediBuild\BuildConsole.exe</home>
+      <properties/>
+      <defaultArgs></defaultArgs>
+    </org.jenkinsci.plugins.windows__exe__runner.ExeInstallation>
+    <org.jenkinsci.plugins.windows__exe__runner.ExeInstallation>
+      <name>TortoiseHg</name>
+      <home>C:\Program Files\TortoiseHg\hg.exe</home>
+      <properties/>
+      <defaultArgs></defaultArgs>
+    </org.jenkinsci.plugins.windows__exe__runner.ExeInstallation>
+    <org.jenkinsci.plugins.windows__exe__runner.ExeInstallation>
+      <name>PowerShell</name>
+      <home>C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe</home>
+      <properties/>
+      <defaultArgs></defaultArgs>
+    </org.jenkinsci.plugins.windows__exe__runner.ExeInstallation>
+    <org.jenkinsci.plugins.windows__exe__runner.ExeInstallation>
+      <name>Cppcheck</name>
+      <home>C:\Program Files (x86)\Cppcheck\cppcheck.exe</home>
+      <properties/>
+      <defaultArgs></defaultArgs>
+    </org.jenkinsci.plugins.windows__exe__runner.ExeInstallation>
+  </installations>
+</org.jenkinsci.plugins.windows__exe__runner.ExeBuilder_-DescriptorImpl>
